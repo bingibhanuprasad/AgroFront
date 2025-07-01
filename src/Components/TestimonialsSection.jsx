@@ -13,27 +13,27 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       id: 1,
-      name: 'John Farmer',
+      name: 'Raju Reddy (Warangal)',
       quote: 'BhanuAgroFarm’s organic poultry is outstanding! Their sustainable approach has transformed my farm.',
     },
     {
       id: 2,
-      name: 'Sarah Green',
+      name: 'Lakshmi Devi (Nellore)',
       quote: 'Their fresh vegetables are vibrant and delicious. Delivery is always fast and reliable!',
     },
     {
       id: 3,
-      name: 'Michael Lee',
+      name: 'Kiran Kumar (Guntur)',
       quote: 'The consultancy service revolutionized my grain farming with modern, eco-friendly techniques.',
     },
     {
       id: 4,
-      name: 'Emily Chen',
+      name: 'Sravani (Rajahmundry)',
       quote: 'As a vendor, I trust BhanuAgroFarm’s grains for their consistent quality and freshness.',
     },
     {
       id: 5,
-      name: 'David Patel',
+      name: 'Venkat Rao (Anantapur)',
       quote: 'BhanuAgroFarm’s commitment to organic farming is inspiring. Their products are top-notch!',
     },
   ];
@@ -48,7 +48,6 @@ const TestimonialsSection = () => {
       <style>
         {`
           .testimonials-section {
-           
             background-color: #f4f7f3;
           }
           .testimonials-header {

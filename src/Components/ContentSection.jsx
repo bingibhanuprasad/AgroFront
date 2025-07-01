@@ -15,7 +15,7 @@ const ContentSection = () => {
       <style>
         {`
           .content-section {
-        
+            padding: 100px 0;
             background-color: #f4f7f3;
           }
           .about-card {

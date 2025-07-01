@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import chickens from '../assets/chickens.jpg';
+import grains from '../assets/grains.jpg';
 const ProductsSection = () => {
   const navigate = useNavigate();
   const [productImages, setProductImages] = useState({
-    1: 'https://images.unsplash.com/photo-1574323347407-f3e1ad6d015d',
+    1: chickens,
     2: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd',
-    3: 'https://images.unsplash.com/photo-1586201375761-83865001e8c5',
+    3: grains,
   });
 
   const fallbackImage = 'https://images.unsplash.com/photo-1500932334442-8761ee4810a7';

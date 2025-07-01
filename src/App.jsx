@@ -13,7 +13,7 @@ import VegetableCategoryPage from './Components/VegitableCategoryPage';
 const HomePage = () => (
   <>
     <HeroSection />
-    <ContentSection />
+  
     <ServicesSection />
     <ProductsSection />
     <TestimonialsSection />

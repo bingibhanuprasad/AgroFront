@@ -75,6 +75,7 @@ const HeroSection = () => (
     <div className="hero-content">
       <h1>Grow with AgroFarm</h1>
       <p>Discover premium organic products for sustainable farming</p>
+      <p>We are committed to revolutionizing the agriculture space with sustainable practices and organic excellence. At BhanuAgroFarm, we grow with nature, ensuring every product we deliver is fresh, healthy, and ethically produced. Join us on our mission to empower farmers and promote green living.</p>
       <Link to="/products" className="btn btn-success">
         Shop Now
       </Link>

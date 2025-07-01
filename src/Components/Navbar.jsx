@@ -4,9 +4,14 @@ import { Link } from 'react-router-dom';
 const Navbar = () => (
   <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <div className="container">
-      <Link className="navbar-brand" to="/">
-        <img src="https://images.unsplash.com/photo-1593062089846-7451d42d32f5" alt="Logo" />
-      </Link>
+<Link
+  className="navbar-brand"
+  to="/"
+  style={{ color: 'green', fontWeight: 'bold', fontSize: '1.5rem', fontFamily: 'Georgia, serif' }}
+>
+  LavanyaAgroWorks
+</Link>
+
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span className="navbar-toggler-icon"></span>
       </button>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Kalam&family=Roboto&display=swap" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BhanuAgroFarm</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+    body {
+      font-family: 'Playfair Display', serif;
+      background-color: #f4f7f3;
+    }
+    .navbar-brand img {
+      height: 50px;
+    }
+    .hero-section {
+      background: url('https://images.unsplash.com/photo-1500595046743-ddf4d3d753fd') no-repeat center center/cover;
+      height: 80vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .content-section, .products-section, .testimonials-section {
+      padding: 60px 0;
+    }
+    .product-card {
+      transition: transform 0.3s;
+    }
+    .product-card:hover {
+      transform: scale(1.05);
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      right: -400px;
+      width: 400px;
+      height: 100%;
+      background: white;
+      transition: right 0.3s;
+      padding: 20px;
+      box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+    }
+    .sidebar.open {
+      right: 0;
+    }
+    .success-message {
+      color: green;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    footer {
+      background-color: #2e4d2a;
+      color: white;
+      padding: 20px 0;
+    }
+    .category-btn {
+      margin: 0 10px 10px 0;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>

@@ -1,17 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => (
-  <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+const Navbar = ({ user }) => (
+  <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top" style={{ fontFamily: "'Kalam', cursive" }}>
     <div className="container">
-<Link
-  className="navbar-brand"
-  to="/"
-  style={{ color: 'green', fontWeight: 'bold', fontSize: '1.5rem', fontFamily: 'Georgia, serif' }}
->
-  LavanyaAgroWorks
-</Link>
-
+      <Link className="navbar-brand" to="/" style={{ color: 'green', fontWeight: 'bold', fontSize: '1.5rem' }}>
+        LavanyaAgroWorks
+      </Link>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -27,13 +22,20 @@ const Navbar = () => (
             <Link className="nav-link" to="/#services">Services</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/#contact">Contact</Link>
+            <Link className="nav-link" to="/contact">Contact</Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/products">Products</Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/#cart">Cart</Link>
+          </li>
+          <li className="nav-item">
+            {user ? (
+              <span className="nav-link text-success fw-bold">{user.name}</span>
+            ) : (
+              <Link className="btn btn-success ms-2" to="/login">Login</Link>
+            )}
           </li>
         </ul>
       </div>

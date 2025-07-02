@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam&family=Playfair+Display:wght@600&family=Roboto:wght@400;500&display=swap');
+
+.contactus-wrapper {
+  background: linear-gradient(to bottom, #f3fdf5, #ffffff);
+  font-family: 'Roboto', sans-serif;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: #2f7a3e;
+  font-weight: 600;
+}
+
+.info-card {
+  background-color: #eafaf0;
+  border: 2px solid #c8e6c9;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.info-card:hover {
+  background-color: #d0f0dd;
+  transform: translateY(-5px);
+}
+
+.info-icon {
+  font-size: 2rem;
+  color: #388e3c;
+  margin-bottom: 10px;
+}
+
+.form-card {
+  background: #ffffff;
+  border-left: 6px solid #4caf50;
+  border-radius: 15px;
+}
+
+.form-title {
+  font-family: 'Kalam', cursive;
+  font-size: 1.8rem;
+  color: #2f7a3e;
+}
+
+.btn-green {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.btn-green:hover {
+  background-color: #388e3c;
+}

@@ -1,0 +1,26 @@
+/* src/pages/auth.css */
+@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
+
+.auth-container {
+  min-height: 100vh;
+  background: url('/agro-background.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Kalam', cursive;
+}
+
+.auth-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.auth-title {
+  color: green;
+  margin-bottom: 1rem;
+}

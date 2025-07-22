@@ -5,7 +5,7 @@ const Navbar = ({ user }) => (
   <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top" style={{ fontFamily: "'Kalam', cursive" }}>
     <div className="container">
       <Link className="navbar-brand" to="/" style={{ color: 'green', fontWeight: 'bold', fontSize: '1.5rem' }}>
-        LavanyaAgroWorks
+      BhanuAgroWorks
       </Link>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span className="navbar-toggler-icon"></span>

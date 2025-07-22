@@ -12,6 +12,7 @@ import Login from './Components/Login';
 import Signup from './Components/Signup';
 import Weprovide from './Components/Weprovide';
 import ContactUs from './Components/ContactUs';
+import AdminHome from './AdminComponents/AdminHome';
 
 const HomePage = () => (
   <>
@@ -56,8 +57,10 @@ const App = () => {
         <Route path="/login" element={<Login setUser={setUser} />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/contact" element={<ContactUs/>}/>
+        <Route path="/admin" element={<AdminHome/>}/>
       </Routes>
       <Footer />
+      
     </>
   );
 };

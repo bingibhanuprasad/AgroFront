@@ -29,12 +29,20 @@ const Login = ({ setUser }) => {
 
       const data = await response.json();
 
+
       if (!response.ok) {
         setError(data.error || 'Login failed');
       } else {
         setUser(data.user); // Set user globally
         localStorage.setItem('user', JSON.stringify(data.user)); // optional
-        navigate('/');
+        if(data.user.role==="admin")
+{
+
+  navigate('/admin')
+} else{
+
+      navigate('/');
+}
       }
     } catch (err) {
       console.error(err);

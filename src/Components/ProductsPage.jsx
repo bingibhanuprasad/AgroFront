@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const ProductsPage = () => {
+const AdminHome = () => {
   const [products, setProducts] = useState([]);
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [formData, setFormData] = useState({ name: '', email: '', quantity: '' });
-  const [successMessage, setSuccessMessage] = useState('');
 
-  // Dummy API fetch
   useEffect(() => {
+    // Simulated fetch from API
     const fetchProducts = async () => {
-      // Simulate API call
       const dummyProducts = [
         { id: 1, name: "Organic Wheat", price: 50, image: "https://images.unsplash.com/photo-1574323347407-f3e1ad6d015d" },
         { id: 2, name: "Fresh Vegetables", price: 30, image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd" },
@@ -18,102 +14,98 @@ const ProductsPage = () => {
       ];
       setProducts(dummyProducts);
     };
+
     fetchProducts();
   }, []);
 
-  const handleBookClick = (product) => {
-    setSelectedProduct(product);
-    setIsSidebarOpen(true);
-  };
-
-  const handleFormChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    // Simulate backend submission
-    setSuccessMessage(`Successfully booked ${formData.quantity}kg of ${selectedProduct.name}!`);
-    setFormData({ name: '', email: '', quantity: '' });
-    setTimeout(() => {
-      setIsSidebarOpen(false);
-      setSuccessMessage('');
-    }, 2000);
-  };
-
   return (
-    <div className="products-section">
-      <div className="container">
-        <h2>Our Products</h2>
+    <div className="min-vh-100 bg-light font-noto-serif">
+      {/* Header */}
+      <header className="bg-success text-white py-3 shadow-sm">
+        <div className="container d-flex justify-content-between align-items-center">
+          <h2 className="mb-0">BhanuAgroFarm Admin</h2>
+          <nav>
+            <ul className="nav">
+              <li className="nav-item">
+                <a href="/dashboard" className="nav-link text-white">Dashboard</a>
+              </li>
+              <li className="nav-item">
+                <a href="/products" className="nav-link text-white">Products</a>
+              </li>
+              <li className="nav-item">
+                <a href="/inventory" className="nav-link text-white">Inventory</a>
+              </li>
+              <li className="nav-item">
+                <a href="/logout" className="nav-link text-white">Logout</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <div className="container mt-4">
         <div className="row">
-          {products.map(product => (
-            <div key={product.id} className="col-md-4 mb-4">
-              <div className="card product-card">
-                <img src={product.image} className="card-img-top" alt={product.name} />
-                <div className="card-body">
-                  <h5 className="card-title">{product.name}</h5>
-                  <p className="card-text">${product.price}/kg</p>
-                  <button className="btn btn-success" onClick={() => handleBookClick(product)}>Book Now</button>
-                </div>
+          {/* Sidebar */}
+          <div className="col-md-3">
+            <div className="bg-white p-3 rounded shadow">
+              <h5 className="text-success mb-3">Admin Menu</h5>
+              <ul className="list-group">
+                <li className="list-group-item">
+                  <a href="/manage-products" className="text-decoration-none text-dark">Manage Products</a>
+                </li>
+                <li className="list-group-item">
+                  <a href="/manage-inventory" className="text-decoration-none text-dark">Manage Inventory</a>
+                </li>
+                <li className="list-group-item">
+                  <a href="/view-bookings" className="text-decoration-none text-dark">View Bookings</a>
+                </li>
+                <li className="list-group-item">
+                  <a href="/settings" className="text-decoration-none text-dark">Settings</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Dashboard Section */}
+          <div className="col-md-9">
+            <div className="bg-white p-4 rounded shadow">
+              <h3 className="text-success mb-3">Welcome to Admin Dashboard</h3>
+              <p className="text-muted">Monitor and manage products, inventory, and customer bookings efficiently.</p>
+
+              <h4 className="mt-4">Available Products</h4>
+              <div className="row mt-3">
+                {products.map(product => (
+                  <div key={product.id} className="col-md-4 mb-4">
+                    <div className="card h-100">
+                      <img
+                        src={product.image}
+                        className="card-img-top"
+                        alt={product.name}
+                        style={{ height: '180px', objectFit: 'cover' }}
+                      />
+                      <div className="card-body">
+                        <h5 className="card-title">{product.name}</h5>
+                        <p className="card-text">Price: ₹{product.price}/kg</p>
+                        <a href={`/edit-product/${product.id}`} className="btn btn-outline-success btn-sm">Edit</a>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
-      <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
-        {selectedProduct && (
-          <>
-            <h3>Book {selectedProduct.name}</h3>
-            <div className="mb-3">
-              <img src={selectedProduct.image} alt={selectedProduct.name} style={{ width: '100%', height: 'auto' }} />
-            </div>
-            <div>
-              <div className="mb-3">
-                <label htmlFor="name" className="form-label">Name</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleFormChange}
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="email" className="form-label">Email</label>
-                <input
-                  type="email"
-                  className="form-control"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleFormChange}
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="quantity" className="form-label">Quantity (kg)</label>
-                <input
-                  type="number"
-                  className="form-control"
-                  id="quantity"
-                  name="quantity"
-                  value={formData.quantity}
-                  onChange={handleFormChange}
-                  min="1"
-                  required
-                />
-              </div>
-              <button className="btn btn-success" onClick={handleFormSubmit}>Submit</button>
-              <button className="btn btn-secondary ms-2" onClick={() => setIsSidebarOpen(false)}>Close</button>
-              {successMessage && <div className="success-message">{successMessage}</div>}
-            </div>
-          </>
-        )}
-      </div>
+
+      {/* Footer */}
+      <footer className="bg-success text-white py-3 mt-5">
+        <div className="container text-center">
+          &copy; 2025 BhanuAgroFarm. All rights reserved.
+        </div>
+      </footer>
     </div>
   );
 };
 
-export default ProductsPage;
+export default AdminHome;

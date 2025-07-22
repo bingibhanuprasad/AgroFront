@@ -27,7 +27,7 @@ const Signup = () => {
     try {
       const response = await fetch('https://agrobackend1.onrender.com/api/auth/signup', {
         method: 'POST',
-        headers: {
+        headers: { 
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
